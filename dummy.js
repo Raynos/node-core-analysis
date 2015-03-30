@@ -4,9 +4,13 @@ while (true) {
 }
 
 function foo() {
+    eval('true');
+
     return bar() + bar();
 }
 
 function bar() {
+    eval('true');
+
     return Math.random();
 }

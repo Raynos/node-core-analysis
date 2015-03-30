@@ -46,8 +46,13 @@ function readCoreFile(coreFile) {
         var largerIndex = loadSections.filter(function (p) {
             return p.vaddr > addr;
         });
+
         assert(largerIndex.length > 0,
             'pointer is above the virtual mem address');
+
+        if (largerIndex[0].index === 0) {
+            return null;
+        }
 
         assert(largerIndex[0].index !== 0,
             'pointer is below the virtual mem address');
