@@ -86,6 +86,8 @@ function elfPrStatusPrs(buf) {
     return {
         // long #5
         bp: parser.readUInt64(buf, 32),
+        // long #17
+        ip: parser.readUInt64(buf, 128),
         // long #20
         sp: parser.readUInt64(buf, 152)
     }
